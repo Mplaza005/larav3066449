@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperacionesController;
+use App\Http\Controllers\ConsultasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Route::get('sumar/{num1}/{num2}',[OperacionesController::class,'sumar']);
 
 Route::get('restar',[OperacionesController::class,'restar']);
+
+Route::get('consultas',[ConsultasController::class,'consultas']);
