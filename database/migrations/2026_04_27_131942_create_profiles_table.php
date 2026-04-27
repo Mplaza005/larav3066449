@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('computers', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('Marca');
-            $table->string('Modelo');
+            $table->string('title',45);
+            $table->text('biografia');
+            $table->string('website',45);
             
-            $table->unsignedBigInteger('person_id')->unique();
+            //creamos el campo para albergar la llave foranea
+            $table->unsignedBigInteger('user_id')->unique();
             //crear la referencia
-            $table->foreign('person_id')
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('people')
+                ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('computers');
+        Schema::dropIfExists('profiles');
     }
 };
