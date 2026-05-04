@@ -14,15 +14,20 @@ class ConsultasController extends Controller
     public function consultas()
     {
 
-        // $user = new User();
-        // $user = User::find(1);
+         //$user = new User();
+        // $user = User::find(2);
 
         // return $user->posts;
 
-        $category = new Category();
-        $category = Category::find(2);
+        //  $category = new Category();
+        //  $category = Category::find(2);
 
-        return $category->posts;
+        //  return $category->posts;
+
+
+        $categories = Category::with(['posts.user'])->get();
+
+        return $categories;
 
 
     }

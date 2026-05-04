@@ -15,12 +15,9 @@ use App\Http\Controllers\ConsultasController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('sumar/{num1}/{num2}',[OperacionesController::class,'sumar']);
+//Route::get('sumar/{num1}/{num2}',[OperacionesController::class,'sumar']);
 
-Route::get('restar',[OperacionesController::class,'restar']);
+//Route::get('restar',[OperacionesController::class,'restar']);
 
 Route::get('consultas',[ConsultasController::class,'consultas']);
