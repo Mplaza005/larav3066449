@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperacionesController;
 use App\Http\Controllers\ConsultasController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,11 @@ use App\Http\Controllers\CategoryController;
 
 //Route::get('restar',[OperacionesController::class,'restar']);
 
+//rutas de Category
 Route::get('frm_category',[CategoryController::class,'create']);
 Route::post('category/store', [CategoryController::class,'store'])->name('category.store');
+
+// rutas de user
+Route::get('frm_user',[UserController::class,'create']);
+Route::post('user/store',[UserController::class,'store'])->name('user.store');
+
