@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperacionesController;
 use App\Http\Controllers\ConsultasController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,5 @@ use App\Http\Controllers\ConsultasController;
 
 //Route::get('restar',[OperacionesController::class,'restar']);
 
-Route::get('consultas',[ConsultasController::class,'consultas']);
+Route::get('frm_category',[CategoryController::class,'create']);
+Route::post('category/store', [CategoryController::class,'store'])->name('category.store');
